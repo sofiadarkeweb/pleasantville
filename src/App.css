@@ -1,38 +1,98 @@
 .App {
-  text-align: center;
+	text-align: center;
+	position: relative;
+	display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.intro-page {
+	background-color: red;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.play-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+}
+.play-btn {
+	z-index: 1000;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hello-card {
+	/* background-color: beige; */
+	width: 50vw;
+	height: 50vh;
+	display: flex;
+	position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.postcard {
+	position: absolute;
+	/* width: 700px; */
+	width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.text-container {
+	display: flex;
+}
+
+.postcard-text {
+	/* position: absolute; */
+	z-index: 1000;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: bold;
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+	width: 40%;
+	padding: 3rem;
+	padding-top: 6rem;
+	max-height: 50vh;
+}
+
+.the-address {
+	z-index: 1000;
+	padding: 3rem;
+	padding-top: 10rem;
+}
+
+.scene1 {
+	background-color: #4f0404;
+	/* width: 100vw; */
+	height: 100vh;
+}
+
+.bell {
+	width: 10%;
+}
+
+.bubble-container {
+	position: relative;
+}
+
+.bubble {
+	border-radius: 5px;
+	background-color: white;
+	width: 200px;
+	/* margin: 5rem; */
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 200px;
+	padding: 1rem;
+}
+.bubble2 {
+	border-radius: 5px;
+	background-color: white;
+	width: 200px;
+	/* margin: 5rem; */
+	position: absolute;
+	margin-top: 200px;
+	margin-left: 800px;
+	padding: 1rem;
 }
