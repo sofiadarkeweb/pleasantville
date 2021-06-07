@@ -91,6 +91,17 @@
 	height: 100vh; */
 }
 
+.welcome-text {
+	position: absolute;
+	font-size: 6rem;
+	font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+	color: white;
+	margin-left: 34rem;
+	margin-right: 10rem;
+	margin-top: 53rem;
+	z-index: 1100;
+}
+
 .poster-scene1 {
 	width: 230px;
 	height: 300px;
@@ -130,10 +141,10 @@
 }
 
 .face {
-	width: 400px;
+	width: 440px;
 	position: absolute;
 	margin-left: 35rem;
-	margin-top: 7rem;
+	margin-top: 6rem;
 }
 
 .desk {

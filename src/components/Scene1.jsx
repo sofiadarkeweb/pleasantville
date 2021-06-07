@@ -47,6 +47,7 @@ const Scene1 = () => {
 					style={{ cursor: "pointer" }}
 				/>
 				<img className="face" src={Face} alt="a face" />
+				<span className="welcome-text">NoHome Motel</span>
 				<img
 					className="desk"
 					src={Desk}
