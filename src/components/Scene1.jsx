@@ -2,8 +2,8 @@ import React from "react";
 import Face from "../media/face2.png";
 import Bell from "../media/bell.png";
 import Desk from "../media/desk.png";
-import * as Tone from "tone";
-import SoundLobby from "../media/pleasantville.wav";
+// import * as Tone from "tone";
+// import SoundLobby from "../media/pleasantville.wav";
 
 // import Key from "../media/key.png";
 // import Speechbubble from "../Speechbubble";
@@ -14,22 +14,22 @@ import Scene2 from "../components/Scene2";
 import { useState } from "react";
 
 const Scene1 = () => {
-	window.onclick = async function makeNoise() {
-		//   //start up the audio machinery
-		//add eventlistener to button?
-		await Tone.start();
+	// window.onclick = async function makeNoise() {
+	// 	//   //start up the audio machinery
+	// 	//add eventlistener to button?
+	// 	await Tone.start();
 
-		const distortion = new Tone.Distortion(0.5).toDestination();
+	// 	const distortion = new Tone.Distortion(0.5).toDestination();
 
-		const player = new Tone.Player({
-			url: SoundLobby,
-			loop: true,
-		}).connect(distortion);
-		player.volume.value = -25;
+	// 	const player = new Tone.Player({
+	// 		url: SoundLobby,
+	// 		loop: true,
+	// 	}).connect(distortion);
+	// 	player.volume.value = -25;
 
-		await Tone.loaded();
-		player.start();
-	};
+	// 	await Tone.loaded();
+	// 	player.start();
+	// };
 	return (
 		<div className="scene1">
 			<div className="scene1-objects">

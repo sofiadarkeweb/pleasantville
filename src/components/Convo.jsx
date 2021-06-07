@@ -66,8 +66,9 @@ const Convo = (props) => {
 	};
 
 	const checkAnswer = (answer) => {
+		var answerLower = answer.toLowerCase();
 		console.log(answer);
-		if (answer === "age") {
+		if (answerLower.includes("age")) {
 			setShowImage(true);
 			setShowWrongAnswer(null);
 		} else {

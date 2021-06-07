@@ -10,7 +10,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 const Game = () => {
 	return (
 		<div>
-			<BrowserRouter>
+			<BrowserRouter basename={process.env.PUBLIC_URL}>
 				<div className="App">
 					<Route exact path="/" component={Intro} />
 					<Route path="/scene1" component={Scene1} />

@@ -5,9 +5,7 @@ const Speechbubble = (props) => {
 		<div className="bubble-container">
 			<div className={props.className}>
 				<p>{props.text}</p>
-				<button className="next-btn" onClick={props.onClick}>
-					next
-				</button>
+				<button onClick={props.onClick}>next</button>
 			</div>
 		</div>
 	);

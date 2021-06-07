@@ -10,7 +10,8 @@ import hole6 from "../media/hole6.png";
 import hole7 from "../media/hole7.png";
 import hole8 from "../media/hole8.png";
 import hole9 from "../media/hole9.png";
-import { useState } from "react";
+import wallpaper from "../media/wallpaper2.jpg";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Scene2 = () => {
@@ -20,8 +21,16 @@ const Scene2 = () => {
 	const [keyHole1, setKeyHole1] = useState(false);
 	const [keyHole2, setKeyHole2] = useState(false);
 	const [keyHole3, setKeyHole3] = useState(false);
+	const [clue, setClue] = useState(false);
 
 	// const randomKeyHole = [hole1, hole2, hole3];
+	useEffect(() => {
+		const timer = setTimeout(() => {
+			setClue(true);
+			console.log("This will run after 3 second!");
+		}, 10000);
+		return () => clearTimeout(timer);
+	}, []);
 
 	const imageClicked = () => {
 		console.log("clicked");
@@ -39,7 +48,7 @@ const Scene2 = () => {
 
 	function showKeyHoles1() {
 		setKeyHole1(true);
-		alert("Unlock me please");
+
 		console.log("hey");
 	}
 	function showKeyHoles2() {
@@ -58,15 +67,33 @@ const Scene2 = () => {
 
 	return (
 		<div className="scene2">
+			<img src={wallpaper} alt="wallpaper" className="hotel-bkg" />
+			{/* {clue && (
+				<div className="Clue">
+					<h2 style={{ color: "white" }}>
+						Have you thought about what room number you're entering?
+					</h2>
+				</div>
+			)} */}
+
 			<div className="doors">
 				<div className="door1">
-					<span className="numbers">122</span>
-					<img src={door} alt="" />
+					<div className="numbers">122</div>
+					<img className="door-img" src={door} alt="" />
 				</div>
 				<div className="door2">
-					<span onClick={showKeyHole} className="numbers">
+					<div onClick={showKeyHole} className="numbers">
 						{number}
-					</span>
+					</div>
+					{firstKeyHole && (
+						<img
+							onClick={showKeyHoles1}
+							src={hole3}
+							alt="first hole"
+							className="first-hole"
+							style={{ cursor: "pointer" }}
+						/>
+					)}
 					{keyHole && (
 						<Link to="/scene3">
 							<img
@@ -78,15 +105,7 @@ const Scene2 = () => {
 							/>
 						</Link>
 					)}
-					{firstKeyHole && (
-						<img
-							onClick={showKeyHoles1}
-							src={hole3}
-							alt="first hole"
-							className="first-hole"
-							style={{ cursor: "pointer" }}
-						/>
-					)}
+
 					{keyHole1 && (
 						<div className="key-holes-container">
 							<img
@@ -151,11 +170,11 @@ const Scene2 = () => {
 						</div>
 					)}
 
-					<img src={door} alt="" />
+					<img className="door-img" src={door} alt="" />
 				</div>
 				<div className="door3">
-					<span className="numbers">124</span>
-					<img src={door} alt="" />
+					<div className="numbers">124</div>
+					<img className="door-img" src={door} alt="" />
 				</div>
 			</div>
 		</div>
