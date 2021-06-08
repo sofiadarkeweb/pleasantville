@@ -71,7 +71,7 @@ const Scene3 = () => {
 			{showButtonNext && (
 				<button
 					className="next-level-button"
-					onClick={"window.parent.postMessage('nextLevel')"}
+					onClick={() => window.parent.postMessage("nextLevel")}
 				>
 					Next Level
 				</button>

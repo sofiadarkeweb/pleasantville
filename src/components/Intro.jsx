@@ -1,10 +1,33 @@
 import React from "react";
-// import { useState } from "react";
-import { BrowserRouter, Link, Route } from "react-router-dom";
+// import * as Tone from "tone";
+import SoundLobby from "../media/soundtrack1.mp3";
+import { Link } from "react-router-dom";
 import postcard from "../media/postcard1.jpg";
 import hotel from "../media/hotel_bkg2.jpg";
 
+const Sound = new Audio({
+	loop: true,
+	volume: 1,
+	src: [SoundLobby],
+});
+
 const Intro = () => {
+	// window.onclick = async function makeNoise() {
+	// 	//   //start up the audio machinery
+	// 	//add eventlistener to button?
+	// 	await Tone.start();
+
+	// 	const distortion = new Tone.Distortion(0.5).toDestination();
+
+	// 	const player = new Tone.Player({
+	// 		url: SoundLobby,
+	// 		loop: false,
+	// 	}).connect(distortion);
+	// 	player.volume.value = -30;
+
+	// 	await Tone.loaded();
+	// 	player.start();
+	// };
 	return (
 		<div className="intro-page">
 			<img src={hotel} alt="hotel front" className="hotel-bkg" />
@@ -28,7 +51,11 @@ const Intro = () => {
 						<p>Level 1</p>
 						<br />
 						<br />
-						<Link className="start-game" to="/scene1">
+						<Link
+							className="start-game"
+							to="/scene1"
+							onClick={() => Sound.play()}
+						>
 							Enter here
 						</Link>
 					</div>

@@ -31,6 +31,9 @@ const SpeechBubblePlayer = ({
 							onSubmit(input);
 						}}
 					>
+						<label for="question" className="question">
+							What goes up but never comes down?...
+						</label>
 						<input
 							className="input"
 							value={input}

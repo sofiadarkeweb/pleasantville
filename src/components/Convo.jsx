@@ -71,6 +71,7 @@ const Convo = (props) => {
 		if (answerLower.includes("age")) {
 			setShowImage(true);
 			setShowWrongAnswer(null);
+			// setConvo(null);
 		} else {
 			setShowWrongAnswer(
 				linesWrongAnwer[Math.floor(Math.random() * linesWrongAnwer.length)]

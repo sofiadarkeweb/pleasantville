@@ -1,6 +1,6 @@
 import React from "react";
 import door from "../media/door.png";
-import SoundHall from "../media/atmo_hall_krejkrej.wav";
+
 import hole1 from "../media/hole1.png";
 import hole2 from "../media/hole2.png";
 import hole3 from "../media/hole3.png";
