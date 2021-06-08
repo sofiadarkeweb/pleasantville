@@ -28,7 +28,7 @@ const Scene2 = () => {
 		const timer = setTimeout(() => {
 			setClue(true);
 			console.log("This will run after 3 second!");
-		}, 10000);
+		}, 180000);
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -44,6 +44,7 @@ const Scene2 = () => {
 		setKeyHole2(false);
 		setKeyHole3(false);
 		setFirstKeyHole(false);
+		setClue(false);
 	}
 
 	function showKeyHoles1() {
@@ -68,15 +69,9 @@ const Scene2 = () => {
 	return (
 		<div className="scene2">
 			<img src={wallpaper} alt="wallpaper" className="hotel-bkg" />
-			{/* {clue && (
-				<div className="Clue">
-					<h2 style={{ color: "white" }}>
-						Have you thought about what room number you're entering?
-					</h2>
-				</div>
-			)} */}
 
 			<div className="doors">
+				{clue && <span className="Clue">What room number was it again?</span>}
 				<div className="door1">
 					<div className="numbers">122</div>
 					<img className="door-img" src={door} alt="" />

@@ -1,7 +1,8 @@
 import React from "react";
-import Face from "../media/face2.png";
+import Face from "../media/face3.png";
 import Bell from "../media/bell.png";
 import Desk from "../media/desk.png";
+import wallpaper from "../media/wallpaper1.jpg";
 // import * as Tone from "tone";
 // import SoundLobby from "../media/pleasantville.wav";
 
@@ -56,6 +57,7 @@ const Scene1 = () => {
 				/>
 			</div>
 			<Convo />
+			<img src={wallpaper} alt="wallpaper" className="hotel-bkg" />
 		</div>
 	);
 };
