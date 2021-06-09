@@ -23,18 +23,15 @@ const Scene2 = () => {
 	const [keyHole3, setKeyHole3] = useState(false);
 	const [clue, setClue] = useState(false);
 
-	// const randomKeyHole = [hole1, hole2, hole3];
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setClue(true);
-			console.log("This will run after 3 second!");
 		}, 180000);
 		return () => clearTimeout(timer);
 	}, []);
 
 	const imageClicked = () => {
-		console.log("clicked");
-		return alert("You've reached your final challenge! Enter the room!");
+		return alert("You've reached your final challenge! Enter the motel room!");
 	};
 
 	function showKeyHole() {
@@ -49,13 +46,10 @@ const Scene2 = () => {
 
 	function showKeyHoles1() {
 		setKeyHole1(true);
-
-		console.log("hey");
 	}
 	function showKeyHoles2() {
 		setKeyHole2(true);
 		alert("The more the merrier ey?");
-		console.log("yay");
 	}
 	function showKeyHoles3() {
 		setKeyHole3(true);

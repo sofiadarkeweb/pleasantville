@@ -1,35 +1,35 @@
 import React from "react";
 // import * as Tone from "tone";
-import SoundLobby from "../media/soundtrack1.mp3";
+
 import { Link } from "react-router-dom";
 import postcard from "../media/postcard1.jpg";
 import hotel from "../media/hotel_bkg2.jpg";
-
-const Sound = new Audio({
-	loop: true,
-	volume: 1,
-	src: [SoundLobby],
-});
+import { useRef } from "react";
+import { Player } from "tone";
+import Sound from "../media/soundtrack2.mp3";
+import { useEffect, useState } from "react";
 
 const Intro = () => {
-	// window.onclick = async function makeNoise() {
-	// 	//   //start up the audio machinery
-	// 	//add eventlistener to button?
-	// 	await Tone.start();
+	const [loop, setLoop] = useState(true);
+	const playerRef = useRef(null);
+	playerRef.current = new Player(Sound).toDestination();
 
-	// 	const distortion = new Tone.Distortion(0.5).toDestination();
+	const play = () => {
+		playerRef.current.start();
+		setLoop(!loop);
+	};
 
-	// 	const player = new Tone.Player({
-	// 		url: SoundLobby,
-	// 		loop: false,
-	// 	}).connect(distortion);
-	// 	player.volume.value = -30;
+	useEffect(() => {
+		playerRef.current.loop = loop;
+	}, [loop]);
 
-	// 	await Tone.loaded();
-	// 	player.start();
+	// const stop = () => {
+	// 	playerRef.current.stop();
 	// };
+
 	return (
 		<div className="intro-page">
+			{/* <SoundBackground /> */}
 			<img src={hotel} alt="hotel front" className="hotel-bkg" />
 			<div className="hello-card">
 				<img className="postcard" src={postcard} alt="" />
@@ -51,11 +51,7 @@ const Intro = () => {
 						<p>Level 1</p>
 						<br />
 						<br />
-						<Link
-							className="start-game"
-							to="/scene1"
-							onClick={() => Sound.play()}
-						>
+						<Link className="start-game" to="/scene1" onClick={play}>
 							Enter here
 						</Link>
 					</div>

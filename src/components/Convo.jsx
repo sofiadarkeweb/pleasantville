@@ -67,11 +67,10 @@ const Convo = (props) => {
 
 	const checkAnswer = (answer) => {
 		var answerLower = answer.toLowerCase();
-		console.log(answer);
+
 		if (answerLower.includes("age")) {
 			setShowImage(true);
 			setShowWrongAnswer(null);
-			// setConvo(null);
 		} else {
 			setShowWrongAnswer(
 				linesWrongAnwer[Math.floor(Math.random() * linesWrongAnwer.length)]
@@ -120,6 +119,3 @@ const Convo = (props) => {
 };
 
 export default Convo;
-
-// for the last frames
-//, input: false

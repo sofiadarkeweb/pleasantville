@@ -1,5 +1,4 @@
 import React from "react";
-// import Ascenetest from "./Ascenetest";
 import room from "../media/room.png";
 import { useState } from "react";
 import RiddleInput from "./RiddleInput";
@@ -36,7 +35,7 @@ const Scene3 = () => {
 
 	const checkAnswer = (answer) => {
 		var answerLower = answer.toLowerCase();
-		console.log(answerLower);
+
 		let nope = [
 			"Is that three words?",
 			"Have you looked around?",
@@ -52,18 +51,6 @@ const Scene3 = () => {
 		} else {
 			return alert(nope[Math.floor(Math.random() * nope.length)]);
 		}
-
-		// if (answer.toLowercase.includes("alex was here")) {
-		// 	alert("yes");
-		// setShowImage(true);
-		// setShowWrongAnswer(null);
-		// } else {
-		// 	alert("no");
-		// setShowWrongAnswer(
-		// 	linesWrongAnwer[Math.floor(Math.random() * linesWrongAnwer.length)]
-		// );
-		// setShowImage(false);
-		// }
 	};
 
 	return (
@@ -85,19 +72,11 @@ const Scene3 = () => {
 			<img src={plant} alt="poster4" className="plant" />
 			<img src={bed} alt="poster4" className="bed" />
 
-			<RiddleInput
-				// prompt={input}
-				// text={lines[convo].player}
-				// onClickButton={moveFwd}
-				// className="bubble2"
-				onSubmit={checkAnswer}
-			/>
+			<RiddleInput onSubmit={checkAnswer} />
 			<div className="poster-scene3" onClick={onClickButton}>
-				{/* <p className="quote-number">#123</p> */}
 				<span className="quote-scene-3">{showTextPoster}</span>
 			</div>
 			<img src={room} alt="hotel room" className="hotel-bkg" />
-			{/* <Ascenetest /> */}
 		</div>
 	);
 };
